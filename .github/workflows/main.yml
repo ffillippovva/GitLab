@@ -1,4 +1,4 @@
-name: Тестирование калькулятора
+name: Тестирование проверок для ИС аптеки
 
 on:
   push:
@@ -23,4 +23,4 @@ jobs:
         run: pip install pytest
 
       - name: Запуск тестов
-        run: pytest test_calculator.py
+        run: pytest test_pharmacy.py
