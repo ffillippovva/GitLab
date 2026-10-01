@@ -1,0 +1,26 @@
+name: Тестирование калькулятора
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Получение файлов проекта
+        uses: actions/checkout@v4
+
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Установка pytest
+        run: pip install pytest
+
+      - name: Запуск тестов
+        run: pytest test_calculator.py
